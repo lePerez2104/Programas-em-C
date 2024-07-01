@@ -1,20 +1,12 @@
-/* 21/08/2023
-PROGRAMA QUE MOSTRA A DATA E A HORA NO SISTEMA NOS SEGUINTES FORMATOS: DD/MM/AAAA - MÊS (POR EXTENSO) E HORA (MINUTO) */	
+/* PROGRAMA QUE MOSTRA A DATA E A HORA NO SISTEMA NOS SEGUINTES FORMATOS: DD/MM/AAAA - MÃŠS (POR EXTENSO) E HORA (MINUTO) */	
 
+// ImportaÃ§Ã£o de bibliotecas
 #include <stdio.h>
 #include <time.h>
-// Para utilização da função localtime()
 
+// Programa principal
 int main()
-{
-	// tm_sec -> segundos da hora do sistema (0 - 59)
-	// tm_min -> minutos da hora do sistema (0 -59)
-	// tm_hour -> hora da hora do sistema (0 -23)
-	// tm_mday -> dia da data do sistema (1 - 31)
-	// tm_mon -> mês da data do sistema (0 -11)
-	// tm_year -> ano da data do sistema (desde 1900)
-	// tm_wday -> dia da semana relativo a data (0 - 6, sendo 0 = domingo)
-	
+{	
 	time_t t;
 	struct tm * data_hora;
 		int dia, mes, ano, hora, min, seg;
@@ -34,24 +26,38 @@ int main()
 		else
 			printf("%d", dia);
 			
-	// Avalia mês passando por extenso
+	// Avalia mÃªs passando por extenso
 	switch(mes)
 		{
-			case 1: printf("/janeiro/"); break;
-			case 2: printf("/março/"); break;
-			case 3: printf("/fevereiro/"); break;
-			case 4: printf("/abril/"); break;
-			case 5: printf("/maio/"); break;
-			case 6: printf("/junho/"); break;
-			case 7: printf("/julho/"); break;
-			case 8: printf("/agosto/"); break;
-			case 9: printf("/setembro/"); break;
-			case 10: printf("/outubro/"); break;
-			case 11: printf("/novembro/"); break;
-			case 12: printf("/dezembro/"); break;
+			case 1: printf("/janeiro/"); 
+				break;
+			case 2: printf("/marÃ§o/"); 
+				break;
+			case 3: printf("/fevereiro/"); 
+				break;
+			case 4: printf("/abril/"); 
+				break;
+			case 5: printf("/maio/"); 
+				break;
+			case 6: printf("/junho/"); 
+				break;
+			case 7: printf("/julho/"); 
+				break;
+			case 8: printf("/agosto/"); 
+				break;
+			case 9: printf("/setembro/"); 
+				break;
+			case 10: printf("/outubro/"); 
+				break;
+			case 11: printf("/novembro/"); 
+				break;
+			case 12: printf("/dezembro/"); 
+				break;
 		}
+	
 	printf("%d", ano);
 	printf("\nHora atual: ");
+	
 	if(hora <= 9)
 		printf("0%d ", hora);
 	else 
@@ -68,6 +74,5 @@ int main()
 		printf(" %d", seg);
 		
 	getchar();
-	return 0;
-			
+	return 0;			
 }
