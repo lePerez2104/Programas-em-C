@@ -1,18 +1,18 @@
 /*
 	Name: Tabuada.cpp
-	Author: Letícia Vitória
+	Author: LetÃ­cia VitÃ³ria
 	Date: 25/06/24 20:30
-	Description: Faça uma função recursiva que faça a tabuada de algum número digitado
-
+	Description: Programa para fazer a tabuada de algum nÃºmero inserido pelo usuÃ¡rio utilizando funÃ§Ã£o recursiva 
 */
 
 // Bibliotecas
 #include <stdio.h>
 #include <locale.h>
 
-// Prototipação
+// PrototipaÃ§Ã£o
 int tabuada(int, int);
 
+// Programa principal
 int main()
 {
 	setlocale(LC_ALL, "Portuguese");
@@ -26,7 +26,7 @@ int main()
 	tabuada(numero, 1);		
 }
 
-// Função para realizar a tabuada de soma
+// FunÃ§Ã£o para realizar a tabuada do nÃºmero inserido pelo usuÃ¡rio
 int tabuada(int num, int i)
 {		
 	if(i <= 10)
@@ -35,6 +35,5 @@ int tabuada(int num, int i)
 		tabuada(num, ++i);
 	}
 	else 	
-		return 0;
-		
+		return 0;		
 }
