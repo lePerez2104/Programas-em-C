@@ -1,56 +1,54 @@
 /*
 	Name: LoginSenha_RecIndireta.cpp
-	Author: Letícia Vitória
-	Date: 20/03/24 08:09
-	Description: Programa para demonstrar a implementação de Funções Recursivas Indiretas
+	Author: LetÃ­cia VitÃ³ria
+	Description: Programa para realizar o login de um usuÃ¡rio podendo errar a senha apenas 3 vezes antes de bloqueÃ¡-la, utilizando recursividade indireta.
 */
 
+// ImportaÃ§Ã£o de bibliotecas
 #include <stdio.h>
 #include <locale.h>
-#include <stdlib.h>  // exit
-#include <Windows.h>  // Sleep
-#include <ctype.h>  // biblioteca para usar a função de conversão 'toupper', que converte caracteres de maiúsculos para minúsculos e vice-versa
+#include <stdlib.h> 
+#include <Windows.h>  
+#include <ctype.h> 
 
-// SESSÃO DE PROTOTIPAÇÃO
+// SessÃ£o de prototipaÃ§Ã£o
 void verLogin();
 void verSenha();
 
-// VARIÁVEIS GLOBAIS - todas as funções enxergam essas variáveis
+// VariÃ¡veis globais
 char user = 'L';
 int senha = 123;
 int i = 0;
 
+// Programa principal
 main()
 {
-	
 	setlocale(LC_ALL, "Portuguese");
-	
 	
 	int pwd = 0;  // pwd = password
 	
 	puts("Fazendo login no sistema...");
 	verLogin();
 
+} // fim do programa principal
 
-} // fim do programa
-
-// FUNÇÃO PARA VERIFICAÇÃO DO LOGIN DO USUÁRIO
+// FunÃ§Ã£o para verificar login do usuÃ¡rio
 void verLogin()
 {
 	char usuario = ' ';
 	printf("Login: ");
 	scanf(" %c", &usuario);
 		
-	if(toupper(usuario) == user)  // se a variável local for igual a variável global
+	if(toupper(usuario) == user)
 		verSenha();
 	else
 	{
-		puts("\n======> usuário inválido - Tente novamente");
-		verLogin();  // técnica de recursividade direta
+		puts("\n======> usuÃ¡rio invÃ¡lido - Tente novamente");
+		verLogin();
 	}
-} // fim da função verLogin()
+} // fim da funÃ§Ã£o verLogin
 
-// FUNÇÃO PARA VERIFICAÇÃO DO SENHA DO USUÁRIO
+// FunÃ§Ã£o para verificar a senha do usuÃ¡rio
 void verSenha()
 {
 	int pwd = 0;
@@ -64,20 +62,17 @@ void verSenha()
 	}
 	else
 	{
-			puts("Senha inválida");
+			puts("Senha invÃ¡lida");
 			i++;
 			if(i <= 2)
 			{
-			// configura recursividade indireta
-			// verLogin();  // retomar a inserção de dados desde o login
-			// configura recursividade direta
-			verSenha();  // retomar a inserção de dados desde a senha
+			verSenha();
 			}
 			else
 			{
-				Sleep(2000);  // suspende o programa em 2s
+				Sleep(2000);
 				puts("Senha bloqueada - Contate seu banco");
 				exit(0);
 			}
 	}
-} // fim da função verSenha()
+} // fim da funÃ§Ã£o verSenha
